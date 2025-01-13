@@ -8,22 +8,32 @@ import Footer from 'components/Footer';
 
 const TodoApp = () => {
   return (
-    <TodoAppContainer>
-      <Header />
-      <AddTask />
-      <TaskList />
-      <Footer />
-    </TodoAppContainer>
+    <OuterContainer>
+      <TodoAppContainer>
+        <Header />
+        <AddTask />
+        <TaskList />
+        <Footer />
+      </TodoAppContainer>
+    </OuterContainer>
   )
 }
 
 export default TodoApp;
 
+const OuterContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+`
+
 const TodoAppContainer = styled.div`  
     background-color: var(--white);
     width: 100%;
-    height: 100vh;
+    height: 90%;
     margin: 0 auto;
+    overflow-y: auto;
 
     @media (min-width: 668px) { 
       width: 70%;
